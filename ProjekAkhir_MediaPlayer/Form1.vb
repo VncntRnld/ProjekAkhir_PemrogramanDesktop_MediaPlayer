@@ -11,6 +11,9 @@ Class formLagu
     Dim year As String
     Dim duration As Integer, currentDuration As Integer
 
+    Dim shuffle As Boolean = False
+
+
     'Update current playing song info
     Private Sub CurrentInfo()
         Dim file As TagLib.File = TagLib.File.Create(lstLagu.SelectedItems(0).Tag.ToString)
@@ -27,17 +30,27 @@ Class formLagu
         lblDurasi.Text = file.Properties.Duration().ToString.Substring(3, 5)
 
         barLagu.Maximum = Me.duration
-        Me.currentDuration = 0
+        Me.currentDuration = 0 '!!!
 
         file.Dispose()
     End Sub
 
-    Private Sub playSong()
+    Private Sub playNewSong()
         If btnPlay.Text = "play" And lstLagu.SelectedItems.Count > 0 Then
             AxWindowsMediaPlayer1.URL = lstLagu.SelectedItems(0).Tag.ToString()
 
             'Text Now Playing
             CurrentInfo()
+
+            Timer1.Enabled = True
+            btnPlay.Image = My.Resources.pause32px
+            btnPlay.Text = "pause"
+        End If
+    End Sub
+
+    Private Sub playSong()
+        If btnPlay.Text = "play" And lstLagu.SelectedItems.Count > 0 Then
+            AxWindowsMediaPlayer1.Ctlcontrols.play()
 
             Timer1.Enabled = True
             btnPlay.Image = My.Resources.pause32px
@@ -58,12 +71,24 @@ Class formLagu
     Private Sub nextSong()
         If lstLagu.SelectedItems.Count > 0 Then
             Dim selectedIndex As Integer = lstLagu.SelectedIndices(0)
+
+            stopSong()
+            lstLagu.SelectedIndices.Clear()
             If selectedIndex < lstLagu.Items.Count - 1 Then
-                stopSong()
-                lstLagu.SelectedIndices.Clear()
-                lstLagu.SelectedIndices.Add(selectedIndex + 1)
-                playSong()
+
+                If shuffle Then 'Jika shuffle nyala..
+                    Dim random As New Random()
+                    lstLagu.SelectedIndices.Add(random.Next(0, lstLagu.Items.Count))
+                Else
+                    lstLagu.SelectedIndices.Add(selectedIndex + 1)
+                End If
+
+            Else
+                lstLagu.SelectedIndices.Add(0)
+
             End If
+            playNewSong()
+
         End If
     End Sub
 
@@ -74,9 +99,18 @@ Class formLagu
                 stopSong()
                 lstLagu.SelectedIndices.Clear()
                 lstLagu.SelectedIndices.Add(selectedIndex - 1)
-                playSong()
+                playNewSong()
             End If
         End If
+    End Sub
+
+    Private Sub ShuffleSong() '!!!
+        If shuffle = True And lstLagu.Items.Count > 0 Then
+            shuffle = False
+        Else
+            shuffle = True
+        End If
+
     End Sub
 
     'GUI Handlers
@@ -87,6 +121,9 @@ Class formLagu
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
         If btnPlay.Text = "play" Then
+            If shuffle Then
+                ShuffleSong()
+            End If
             playSong()
         Else
             stopSong()
@@ -131,6 +168,15 @@ Class formLagu
 
     Private Sub btnPrev_Click(sender As Object, e As EventArgs) Handles btnPrev.Click
         prevSong()
+    End Sub
+
+    Private Sub lstLagu_DoubleClick(sender As Object, e As EventArgs) Handles lstLagu.DoubleClick
+        stopSong()
+        playNewSong()
+    End Sub
+
+    Private Sub btnShuffle_Click(sender As Object, e As EventArgs) Handles btnShuffle.Click
+        ShuffleSong()
     End Sub
 
     'Buat Timer per lagu

@@ -180,5 +180,8 @@
   <ItemGroup>
     <None Include="Resources\back24px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
