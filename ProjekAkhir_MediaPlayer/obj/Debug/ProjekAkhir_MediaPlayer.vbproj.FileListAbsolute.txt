@@ -23,3 +23,4 @@ D:\Kuliah\Semester 6\ProgDesktop\ProjekAkhir\ProjekAkhir_MediaPlayer\ProjekAkhir
 D:\Kuliah\Semester 6\ProgDesktop\ProjekAkhir\ProjekAkhir_MediaPlayer\ProjekAkhir_MediaPlayer\bin\Debug\policy.2.0.taglib-sharp.dll
 D:\Kuliah\Semester 6\ProgDesktop\ProjekAkhir\ProjekAkhir_MediaPlayer\ProjekAkhir_MediaPlayer\bin\Debug\taglib-sharp.dll
 D:\Kuliah\Semester 6\ProgDesktop\ProjekAkhir\ProjekAkhir_MediaPlayer\ProjekAkhir_MediaPlayer\bin\Debug\policy.2.0.taglib-sharp.config
+D:\Kuliah\Semester 6\ProgDesktop\ProjekAkhir\ProjekAkhir_MediaPlayer\ProjekAkhir_MediaPlayer\obj\Debug\ProjekAkhir_MediaPlayer.FormVideo.resources
