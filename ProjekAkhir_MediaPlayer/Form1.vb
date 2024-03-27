@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports TagLib
+Imports TagLib.Riff
 
 Class formLagu
 
@@ -120,6 +121,43 @@ Class formLagu
         AxWindowsMediaPlayer1.uiMode = "none"
 
         Panel2.Dock = DockStyle.Fill
+
+        Dim relativeFilePath As String = "autosave.txt"
+        Dim filePath As String = Path.Combine(Application.StartupPath, relativeFilePath)
+        If My.Computer.FileSystem.FileExists(filePath) Then
+            lstLagu.Items.Clear()
+            Dim line As String
+            Using reader As New StreamReader(filePath)
+                While Not reader.EndOfStream
+                    line = reader.ReadLine()
+                    Console.WriteLine(line)
+                    Dim file As TagLib.File = Nothing
+
+                    file = TagLib.File.Create(line)
+                    Dim item As New ListViewItem()
+                    item.Text = If(file.Tag.Title, Path.GetFileNameWithoutExtension(line))
+                    item.SubItems.Add(String.Join(", ", file.Tag.Performers))
+                    item.SubItems.Add(file.Tag.Album)
+                    item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
+                    item.Tag = line ' Simpan jalur file untuk pemutaran
+                    lstLagu.Items.Add(item)
+
+                    If file IsNot Nothing Then
+                        file.Dispose()
+                    End If
+                End While
+            End Using
+        End If
+    End Sub
+
+    Private Sub formLagu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim relativeFilePath As String = "autosave.txt"
+        Dim filePath As String = Path.Combine(Application.StartupPath, relativeFilePath)
+        Using writer As New StreamWriter(filePath)
+            For Each item As ListViewItem In lstLagu.Items
+                writer.WriteLine(item.Tag.ToString())
+            Next
+        End Using
     End Sub
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
@@ -247,7 +285,6 @@ Class formLagu
                 MessageBox.Show("Error Opening file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
-
     End Sub
 
     'Buat Timer per lagu
