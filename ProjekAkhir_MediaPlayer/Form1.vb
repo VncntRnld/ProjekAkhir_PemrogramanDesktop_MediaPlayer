@@ -25,7 +25,8 @@ Class formLagu
         Me.duration = CInt(file.Properties.Duration().TotalSeconds)
 
         'Update Info
-        lblCurrentSong.Text = "Now Playing: " & title & " - " & artist
+        lblCurrentSong.Text = title
+        lblCurrentSinger.Text = artist
         lblDurasi.Text = file.Properties.Duration().ToString.Substring(3, 5)
 
         barLagu.Maximum = Me.duration
@@ -117,6 +118,8 @@ Class formLagu
     Private Sub formLagu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btnPlay.Text = "play"
         AxWindowsMediaPlayer1.uiMode = "none"
+
+        Panel2.Dock = DockStyle.Fill
     End Sub
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
@@ -159,7 +162,9 @@ Class formLagu
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        lstLagu.Items.Remove(lstLagu.SelectedItems(0))
+        If lstLagu.SelectedItems.Count > 0 Then
+            lstLagu.Items.Remove(lstLagu.SelectedItems(0))
+        End If
     End Sub
 
     Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
