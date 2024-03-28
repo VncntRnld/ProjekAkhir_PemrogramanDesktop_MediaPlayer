@@ -167,30 +167,33 @@ Class formLagu
         End If
     End Sub
 
+    Private Sub AddFileToListView(ByVal filePath As String)
+        Dim file As TagLib.File = Nothing
+        Try
+            file = TagLib.File.Create(filePath)
+            Dim item As New ListViewItem()
+            item.Text = If(file.Tag.Title, Path.GetFileNameWithoutExtension(filePath))
+            item.SubItems.Add(String.Join(", ", file.Tag.Performers))
+            item.SubItems.Add(file.Tag.Album)
+            item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
+            item.Tag = filePath ' Save file path for playback
+            lstLagu.Items.Add(item)
+
+        Catch ex As Exception
+            MessageBox.Show($"Error reading metadata for file {Path.GetFileName(filePath)}")
+
+        Finally
+            If file IsNot Nothing Then
+                file.Dispose()
+            End If
+        End Try
+    End Sub
+
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         OpenFileDialog1.Filter = "mp3 files (*.mp3)|*.mp3"
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
             For Each lagu As String In OpenFileDialog1.FileNames
-                Dim file As TagLib.File = Nothing
-                Try
-                    file = TagLib.File.Create(lagu)
-                    Dim item As New ListViewItem()
-                    item.Text = If(file.Tag.Title, Path.GetFileNameWithoutExtension(lagu))
-                    item.SubItems.Add(String.Join(", ", file.Tag.Performers))
-                    item.SubItems.Add(file.Tag.Album)
-                    item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
-                    item.Tag = lagu ' Simpan jalur file untuk pemutaran
-                    lstLagu.Items.Add(item)
-
-                Catch ex As Exception
-                    ' Menangani kesalahan pembacaan metadata
-                    MessageBox.Show($"Error reading metadata for file {Path.GetFileName(lagu)}")
-
-                Finally
-                    If file IsNot Nothing Then
-                        file.Dispose()
-                    End If
-                End Try
+                AddFileToListView(lagu)
             Next
         End If
     End Sub
@@ -309,26 +312,7 @@ Class formLagu
             Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
 
             For Each lagu As String In files
-                Dim file As TagLib.File = Nothing
-                Try
-                    file = TagLib.File.Create(lagu)
-                    Dim item As New ListViewItem()
-                    item.Text = If(file.Tag.Title, Path.GetFileNameWithoutExtension(lagu))
-                    item.SubItems.Add(String.Join(", ", file.Tag.Performers))
-                    item.SubItems.Add(file.Tag.Album)
-                    item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
-                    item.Tag = lagu ' Simpan jalur file untuk pemutaran
-                    lstLagu.Items.Add(item)
-
-                Catch ex As Exception
-                    ' Menangani kesalahan pembacaan metadata
-                    MessageBox.Show($"Error reading metadata for file {Path.GetFileName(lagu)}")
-
-                Finally
-                    If file IsNot Nothing Then
-                        file.Dispose()
-                    End If
-                End Try
+                AddFileToListView(lagu)
             Next
         End If
     End Sub
