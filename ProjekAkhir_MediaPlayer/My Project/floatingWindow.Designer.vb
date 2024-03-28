@@ -71,7 +71,7 @@ Partial Class floatingWindow
         Me.lblCurrentSinger.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrentSinger.ForeColor = System.Drawing.Color.White
         Me.lblCurrentSinger.Location = New System.Drawing.Point(22, 66)
-        Me.lblCurrentSinger.MaximumSize = New System.Drawing.Size(180, 23)
+        Me.lblCurrentSinger.MaximumSize = New System.Drawing.Size(140, 23)
         Me.lblCurrentSinger.Name = "lblCurrentSinger"
         Me.lblCurrentSinger.Size = New System.Drawing.Size(0, 23)
         Me.lblCurrentSinger.TabIndex = 10
@@ -93,7 +93,7 @@ Partial Class floatingWindow
         Me.lblCurrentSong.Font = New System.Drawing.Font("Poppins", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrentSong.ForeColor = System.Drawing.Color.White
         Me.lblCurrentSong.Location = New System.Drawing.Point(22, 43)
-        Me.lblCurrentSong.MaximumSize = New System.Drawing.Size(180, 23)
+        Me.lblCurrentSong.MaximumSize = New System.Drawing.Size(140, 23)
         Me.lblCurrentSong.Name = "lblCurrentSong"
         Me.lblCurrentSong.Size = New System.Drawing.Size(0, 23)
         Me.lblCurrentSong.TabIndex = 5
@@ -104,11 +104,13 @@ Partial Class floatingWindow
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(326, 107)
         Me.Controls.Add(Me.Panel3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(342, 146)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(342, 146)
         Me.Name = "floatingWindow"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "floatingWindow"
         Me.TopMost = True
         Me.Panel3.ResumeLayout(False)

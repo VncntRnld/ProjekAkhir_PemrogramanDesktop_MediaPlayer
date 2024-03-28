@@ -105,6 +105,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Include="My Project\floatingWindow.Designer.vb">
+      <DependentUpon>floatingWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\floatingWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\FormVideo.Designer.vb">
       <DependentUpon>FormVideo.vb</DependentUpon>
     </Compile>
@@ -125,6 +131,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\floatingWindow.resx">
+      <DependentUpon>floatingWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\FormVideo.resx">
       <DependentUpon>FormVideo.vb</DependentUpon>
@@ -191,6 +200,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\mini-display.png" />
+    <None Include="Resources\mini-display1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

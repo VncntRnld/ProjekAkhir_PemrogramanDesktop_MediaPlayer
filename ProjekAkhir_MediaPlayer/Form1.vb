@@ -1,18 +1,19 @@
 ﻿Imports System.IO
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports TagLib
 Imports TagLib.Riff
 
 Class formLagu
 
     'Current info storage
-    Dim title As String
-    Dim artist As String
+    Public Shared title As String
+    Public Shared artist As String
+
     Dim album As String
     Dim year As String
     Dim duration As Integer, currentDuration As Integer
 
-    Dim shuffle As Boolean = False
+    Public Shared shuffle As Boolean = False
+    Public Shared currentindex As Integer = 0
 
 
     'Update current playing song info
@@ -29,6 +30,11 @@ Class formLagu
         'Update Info
         lblCurrentSong.Text = title
         lblCurrentSinger.Text = artist
+        If floatingWindow.Visible Then
+            floatingWindow.lblCurrentSong.Text = title
+            floatingWindow.lblCurrentSinger.Text = artist
+        End If
+
         lblDurasi.Text = file.Properties.Duration().ToString.Substring(3, 5)
 
         barLagu.Maximum = Me.duration
@@ -45,32 +51,48 @@ Class formLagu
             CurrentInfo()
 
             Timer1.Enabled = True
+            Timer2.Enabled = True
             btnPlay.Image = My.Resources.pause32px
             btnPlay.Text = "pause"
+            If floatingWindow.Visible Then
+                floatingWindow.btnPlay.Image = My.Resources.pause32px
+                floatingWindow.btnPlay.Text = "pause"
+            End If
         End If
     End Sub
 
-    Private Sub playSong()
+    Public Sub playSong()
         If btnPlay.Text = "play" And lstLagu.SelectedItems.Count > 0 Then
             AxWindowsMediaPlayer1.Ctlcontrols.play()
 
             Timer1.Enabled = True
+            Timer2.Enabled = True
             btnPlay.Image = My.Resources.pause32px
             btnPlay.Text = "pause"
+            If floatingWindow.Visible Then
+                floatingWindow.btnPlay.Image = My.Resources.pause32px
+                floatingWindow.btnPlay.Text = "pause"
+            End If
+
         End If
     End Sub
 
-    Private Sub stopSong()
+    Public Sub stopSong()
         If btnPlay.Text = "pause" Then
             AxWindowsMediaPlayer1.Ctlcontrols.pause()
 
             Timer1.Enabled = False
+            Timer2.Enabled = False
             btnPlay.Image = My.Resources.play32px
             btnPlay.Text = "play"
+            If floatingWindow.Visible Then
+                floatingWindow.btnPlay.Image = My.Resources.play32px
+                floatingWindow.btnPlay.Text = "play"
+            End If
         End If
     End Sub
 
-    Private Sub nextSong()
+    Public Sub nextSong()
         If lstLagu.SelectedItems.Count > 0 Then
             Dim selectedIndex As Integer = lstLagu.SelectedIndices(0)
 
@@ -80,7 +102,6 @@ Class formLagu
 
                 If shuffle Then 'Jika shuffle nyala..
                     Dim random As New Random()
-
                     lstLagu.SelectedIndices.Add(random.Next(0, lstLagu.Items.Count))
                 Else
                     lstLagu.SelectedIndices.Add(selectedIndex + 1)
@@ -95,7 +116,7 @@ Class formLagu
         End If
     End Sub
 
-    Private Sub prevSong()
+    Public Sub prevSong()
         If lstLagu.SelectedItems.Count > 0 Then
             Dim selectedIndex As Integer = lstLagu.SelectedIndices(0)
             If selectedIndex > 0 Then
@@ -107,7 +128,7 @@ Class formLagu
         End If
     End Sub
 
-    Private Sub ShuffleSong() '!!!
+    Public Sub ShuffleSong() '!!!
         If shuffle = True And lstLagu.Items.Count > 0 Then
             shuffle = False
         Else
@@ -314,6 +335,25 @@ Class formLagu
             For Each lagu As String In files
                 AddFileToListView(lagu)
             Next
+        End If
+    End Sub
+
+    Private Sub btnFloating_Click(sender As Object, e As EventArgs) Handles btnFloating.Click
+        floatingWindow.Show()
+    End Sub
+
+    'Buat timer text slider
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        If Me.title.Length > 12 Then
+            If lblCurrentSong.Text.Length > 12 Then
+                'Add more text behind
+                lblCurrentSong.Text &= " ** " & Me.title
+            End If
+            lblCurrentSong.Text = Me.lblCurrentSong.Text.Substring(1, Me.lblCurrentSong.Text.Length - 1)
+            currentindex += 1
+            If floatingWindow.Visible Then
+                floatingWindow.lblCurrentSong.Text = lblCurrentSong.Text
+            End If
         End If
     End Sub
 
