@@ -87,10 +87,10 @@ Partial Class formLagu
         Me.Panel4.Controls.Add(Me.btnTambah)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel4.ForeColor = System.Drawing.Color.White
-        Me.Panel4.Location = New System.Drawing.Point(0, 30)
+        Me.Panel4.Location = New System.Drawing.Point(0, 28)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(201, 407)
+        Me.Panel4.Size = New System.Drawing.Size(201, 409)
         Me.Panel4.TabIndex = 5
         '
         'PictureBox1
@@ -164,7 +164,7 @@ Partial Class formLagu
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 437)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(15, 15, 15, 15)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(15)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1216, 208)
         Me.Panel1.TabIndex = 2
@@ -326,15 +326,16 @@ Partial Class formLagu
         '
         'lstLagu
         '
+        Me.lstLagu.AllowDrop = True
         Me.lstLagu.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chTitle, Me.chArtists, Me.chAlbum, Me.chDuration})
         Me.lstLagu.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lstLagu.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstLagu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lstLagu.HideSelection = False
-        Me.lstLagu.Location = New System.Drawing.Point(201, 30)
+        Me.lstLagu.Location = New System.Drawing.Point(201, 28)
         Me.lstLagu.MultiSelect = False
         Me.lstLagu.Name = "lstLagu"
-        Me.lstLagu.Size = New System.Drawing.Size(1015, 407)
+        Me.lstLagu.Size = New System.Drawing.Size(1015, 409)
         Me.lstLagu.TabIndex = 7
         Me.lstLagu.UseCompatibleStateImageBehavior = False
         Me.lstLagu.View = System.Windows.Forms.View.Details
@@ -372,7 +373,7 @@ Partial Class formLagu
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(1216, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1216, 28)
         Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '

@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports TagLib
 Imports TagLib.Riff
 
@@ -121,13 +122,10 @@ Class formLagu
         AxWindowsMediaPlayer1.uiMode = "none"
 
         Panel2.Dock = DockStyle.Fill
-
-        Dim relativeFilePath As String = "autosave.txt"
-        Dim filePath As String = Path.Combine(Application.StartupPath, relativeFilePath)
-        If My.Computer.FileSystem.FileExists(filePath) Then
+        If My.Computer.FileSystem.FileExists(Path.Combine(Application.StartupPath, "autosave.txt")) Then
             lstLagu.Items.Clear()
             Dim line As String
-            Using reader As New StreamReader(filePath)
+            Using reader As New StreamReader(Path.Combine(Application.StartupPath, "autosave.txt"))
                 While Not reader.EndOfStream
                     line = reader.ReadLine()
                     Console.WriteLine(line)
@@ -151,9 +149,7 @@ Class formLagu
     End Sub
 
     Private Sub formLagu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim relativeFilePath As String = "autosave.txt"
-        Dim filePath As String = Path.Combine(Application.StartupPath, relativeFilePath)
-        Using writer As New StreamWriter(filePath)
+        Using writer As New StreamWriter(Path.Combine(Application.StartupPath, "autosave.txt"))
             For Each item As ListViewItem In lstLagu.Items
                 writer.WriteLine(item.Tag.ToString())
             Next
@@ -284,6 +280,56 @@ Class formLagu
             Catch ex As Exception
                 MessageBox.Show("Error Opening file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
+        End If
+    End Sub
+
+    Private Sub lstLagu_DragEnter(sender As Object, e As DragEventArgs) Handles lstLagu.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+            Dim allFilesValid As Boolean = True
+            For Each file As String In files
+                If Not file.ToLower().EndsWith(".mp3") Then
+                    allFilesValid = False
+                    Exit For
+                End If
+            Next
+            If allFilesValid Then
+                e.Effect = DragDropEffects.Copy
+            Else
+                MsgBox("Please only drop files with the .mp3 extension.")
+                e.Effect = DragDropEffects.None
+            End If
+        Else
+            e.Effect = DragDropEffects.None
+        End If
+    End Sub
+
+    Private Sub lstLagu_DragDrop(sender As Object, e As DragEventArgs) Handles lstLagu.DragDrop
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+
+            For Each lagu As String In files
+                Dim file As TagLib.File = Nothing
+                Try
+                    file = TagLib.File.Create(lagu)
+                    Dim item As New ListViewItem()
+                    item.Text = If(file.Tag.Title, Path.GetFileNameWithoutExtension(lagu))
+                    item.SubItems.Add(String.Join(", ", file.Tag.Performers))
+                    item.SubItems.Add(file.Tag.Album)
+                    item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
+                    item.Tag = lagu ' Simpan jalur file untuk pemutaran
+                    lstLagu.Items.Add(item)
+
+                Catch ex As Exception
+                    ' Menangani kesalahan pembacaan metadata
+                    MessageBox.Show($"Error reading metadata for file {Path.GetFileName(lagu)}")
+
+                Finally
+                    If file IsNot Nothing Then
+                        file.Dispose()
+                    End If
+                End Try
+            Next
         End If
     End Sub
 
