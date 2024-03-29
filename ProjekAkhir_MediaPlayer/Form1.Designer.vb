@@ -91,17 +91,19 @@ Partial Class formLagu
         Me.Panel4.Controls.Add(Me.btnTambah)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel4.ForeColor = System.Drawing.Color.White
-        Me.Panel4.Location = New System.Drawing.Point(0, 24)
+        Me.Panel4.Location = New System.Drawing.Point(0, 28)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(134, 260)
+        Me.Panel4.Size = New System.Drawing.Size(201, 409)
         Me.Panel4.TabIndex = 5
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.wave_sound
-        Me.PictureBox1.Location = New System.Drawing.Point(34, 37)
+        Me.PictureBox1.Location = New System.Drawing.Point(51, 57)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.Size = New System.Drawing.Size(96, 98)
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
@@ -113,10 +115,10 @@ Partial Class formLagu
         Me.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHapus.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnHapus.ForeColor = System.Drawing.Color.White
-        Me.btnHapus.Location = New System.Drawing.Point(22, 209)
+        Me.btnHapus.Location = New System.Drawing.Point(33, 322)
         Me.btnHapus.Margin = New System.Windows.Forms.Padding(0)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(90, 25)
+        Me.btnHapus.Size = New System.Drawing.Size(135, 38)
         Me.btnHapus.TabIndex = 4
         Me.btnHapus.Text = "Delete Song"
         Me.btnHapus.UseVisualStyleBackColor = False
@@ -129,10 +131,10 @@ Partial Class formLagu
         Me.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTambah.ForeColor = System.Drawing.Color.White
-        Me.btnTambah.Location = New System.Drawing.Point(22, 171)
+        Me.btnTambah.Location = New System.Drawing.Point(33, 263)
         Me.btnTambah.Margin = New System.Windows.Forms.Padding(0)
         Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(90, 25)
+        Me.btnTambah.Size = New System.Drawing.Size(135, 38)
         Me.btnTambah.TabIndex = 4
         Me.btnTambah.Text = "Add Song"
         Me.btnTambah.UseVisualStyleBackColor = False
@@ -141,7 +143,6 @@ Partial Class formLagu
         '
         Me.AxWindowsMediaPlayer1.Enabled = True
         Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(24, 27)
-        Me.AxWindowsMediaPlayer1.Margin = New System.Windows.Forms.Padding(2)
         Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
         Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
         Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(80, 80)
@@ -152,10 +153,11 @@ Partial Class formLagu
         Me.lblCurrentSong.AutoSize = True
         Me.lblCurrentSong.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrentSong.ForeColor = System.Drawing.Color.White
-        Me.lblCurrentSong.Location = New System.Drawing.Point(109, 51)
-        Me.lblCurrentSong.MaximumSize = New System.Drawing.Size(180, 23)
+        Me.lblCurrentSong.Location = New System.Drawing.Point(164, 78)
+        Me.lblCurrentSong.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCurrentSong.MaximumSize = New System.Drawing.Size(270, 35)
         Me.lblCurrentSong.Name = "lblCurrentSong"
-        Me.lblCurrentSong.Size = New System.Drawing.Size(0, 16)
+        Me.lblCurrentSong.Size = New System.Drawing.Size(0, 25)
         Me.lblCurrentSong.TabIndex = 5
         '
         'Panel1
@@ -165,10 +167,10 @@ Partial Class formLagu
         Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 284)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(10)
+        Me.Panel1.Location = New System.Drawing.Point(0, 437)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(15, 15, 15, 15)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(811, 135)
+        Me.Panel1.Size = New System.Drawing.Size(1216, 208)
         Me.Panel1.TabIndex = 2
         '
         'Panel6
@@ -181,18 +183,20 @@ Partial Class formLagu
         Me.Panel6.Controls.Add(Me.btnNext)
         Me.Panel6.Controls.Add(Me.barLagu)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(220, 0)
+        Me.Panel6.Location = New System.Drawing.Point(330, 0)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(371, 135)
+        Me.Panel6.Size = New System.Drawing.Size(556, 208)
         Me.Panel6.TabIndex = 12
         '
         'btnShuffle
         '
         Me.btnShuffle.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnShuffle.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.shuffle
-        Me.btnShuffle.Location = New System.Drawing.Point(276, 54)
+        Me.btnShuffle.Location = New System.Drawing.Point(414, 83)
+        Me.btnShuffle.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnShuffle.Name = "btnShuffle"
-        Me.btnShuffle.Size = New System.Drawing.Size(24, 24)
+        Me.btnShuffle.Size = New System.Drawing.Size(36, 37)
         Me.btnShuffle.TabIndex = 8
         Me.btnShuffle.TabStop = False
         '
@@ -202,10 +206,9 @@ Partial Class formLagu
         Me.lblDurasi.AutoSize = True
         Me.lblDurasi.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDurasi.ForeColor = System.Drawing.Color.White
-        Me.lblDurasi.Location = New System.Drawing.Point(313, 92)
-        Me.lblDurasi.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblDurasi.Location = New System.Drawing.Point(470, 142)
         Me.lblDurasi.Name = "lblDurasi"
-        Me.lblDurasi.Size = New System.Drawing.Size(38, 15)
+        Me.lblDurasi.Size = New System.Drawing.Size(55, 22)
         Me.lblDurasi.TabIndex = 3
         Me.lblDurasi.Text = "00:00"
         '
@@ -213,9 +216,10 @@ Partial Class formLagu
         '
         Me.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnPrev.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.back24px
-        Me.btnPrev.Location = New System.Drawing.Point(122, 54)
+        Me.btnPrev.Location = New System.Drawing.Point(183, 83)
+        Me.btnPrev.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnPrev.Name = "btnPrev"
-        Me.btnPrev.Size = New System.Drawing.Size(24, 24)
+        Me.btnPrev.Size = New System.Drawing.Size(36, 37)
         Me.btnPrev.TabIndex = 7
         Me.btnPrev.TabStop = False
         '
@@ -225,10 +229,9 @@ Partial Class formLagu
         Me.lblDurasiSekarang.AutoSize = True
         Me.lblDurasiSekarang.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDurasiSekarang.ForeColor = System.Drawing.Color.White
-        Me.lblDurasiSekarang.Location = New System.Drawing.Point(23, 92)
-        Me.lblDurasiSekarang.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblDurasiSekarang.Location = New System.Drawing.Point(34, 142)
         Me.lblDurasiSekarang.Name = "lblDurasiSekarang"
-        Me.lblDurasiSekarang.Size = New System.Drawing.Size(38, 15)
+        Me.lblDurasiSekarang.Size = New System.Drawing.Size(55, 22)
         Me.lblDurasiSekarang.TabIndex = 3
         Me.lblDurasiSekarang.Text = "00:00"
         '
@@ -236,9 +239,10 @@ Partial Class formLagu
         '
         Me.btnPlay.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnPlay.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.play32px
-        Me.btnPlay.Location = New System.Drawing.Point(173, 50)
+        Me.btnPlay.Location = New System.Drawing.Point(260, 77)
+        Me.btnPlay.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnPlay.Name = "btnPlay"
-        Me.btnPlay.Size = New System.Drawing.Size(32, 32)
+        Me.btnPlay.Size = New System.Drawing.Size(48, 49)
         Me.btnPlay.TabIndex = 4
         Me.btnPlay.TabStop = False
         '
@@ -246,9 +250,10 @@ Partial Class formLagu
         '
         Me.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnNext.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.next24px
-        Me.btnNext.Location = New System.Drawing.Point(228, 54)
+        Me.btnNext.Location = New System.Drawing.Point(342, 83)
+        Me.btnNext.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(24, 24)
+        Me.btnNext.Size = New System.Drawing.Size(36, 37)
         Me.btnNext.TabIndex = 6
         Me.btnNext.TabStop = False
         '
@@ -256,10 +261,10 @@ Partial Class formLagu
         '
         Me.barLagu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.barLagu.Location = New System.Drawing.Point(63, 90)
+        Me.barLagu.Location = New System.Drawing.Point(94, 138)
         Me.barLagu.Margin = New System.Windows.Forms.Padding(0)
         Me.barLagu.Name = "barLagu"
-        Me.barLagu.Size = New System.Drawing.Size(248, 45)
+        Me.barLagu.Size = New System.Drawing.Size(372, 69)
         Me.barLagu.TabIndex = 1
         Me.barLagu.TickStyle = System.Windows.Forms.TickStyle.None
         '
@@ -267,18 +272,20 @@ Partial Class formLagu
         '
         Me.Panel5.Controls.Add(Me.btnFloating)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(591, 0)
+        Me.Panel5.Location = New System.Drawing.Point(886, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(220, 135)
+        Me.Panel5.Size = New System.Drawing.Size(330, 208)
         Me.Panel5.TabIndex = 11
         '
         'btnFloating
         '
         Me.btnFloating.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnFloating.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.mini_display
-        Me.btnFloating.Location = New System.Drawing.Point(171, 55)
+        Me.btnFloating.Location = New System.Drawing.Point(256, 85)
+        Me.btnFloating.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnFloating.Name = "btnFloating"
-        Me.btnFloating.Size = New System.Drawing.Size(24, 24)
+        Me.btnFloating.Size = New System.Drawing.Size(36, 37)
         Me.btnFloating.TabIndex = 9
         Me.btnFloating.TabStop = False
         '
@@ -290,8 +297,9 @@ Partial Class formLagu
         Me.Panel3.Controls.Add(Me.lblCurrentSong)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(220, 135)
+        Me.Panel3.Size = New System.Drawing.Size(330, 208)
         Me.Panel3.TabIndex = 10
         '
         'lblCurrentSinger
@@ -299,10 +307,11 @@ Partial Class formLagu
         Me.lblCurrentSinger.AutoSize = True
         Me.lblCurrentSinger.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrentSinger.ForeColor = System.Drawing.Color.White
-        Me.lblCurrentSinger.Location = New System.Drawing.Point(109, 74)
-        Me.lblCurrentSinger.MaximumSize = New System.Drawing.Size(180, 23)
+        Me.lblCurrentSinger.Location = New System.Drawing.Point(164, 114)
+        Me.lblCurrentSinger.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCurrentSinger.MaximumSize = New System.Drawing.Size(270, 35)
         Me.lblCurrentSinger.Name = "lblCurrentSinger"
-        Me.lblCurrentSinger.Size = New System.Drawing.Size(0, 16)
+        Me.lblCurrentSinger.Size = New System.Drawing.Size(0, 25)
         Me.lblCurrentSinger.TabIndex = 10
         '
         'Label1
@@ -310,9 +319,10 @@ Partial Class formLagu
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(109, 27)
+        Me.Label1.Location = New System.Drawing.Point(164, 42)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 16)
+        Me.Label1.Size = New System.Drawing.Size(144, 25)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Now Playing: "
         '
@@ -325,23 +335,23 @@ Partial Class formLagu
         Me.Panel2.Controls.Add(Me.Panel1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(811, 419)
+        Me.Panel2.Size = New System.Drawing.Size(1216, 645)
         Me.Panel2.TabIndex = 0
         '
         'lstLagu
         '
+        Me.lstLagu.AllowColumnReorder = True
         Me.lstLagu.AllowDrop = True
         Me.lstLagu.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chTitle, Me.chArtists, Me.chAlbum, Me.chDuration})
         Me.lstLagu.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lstLagu.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstLagu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lstLagu.HideSelection = False
-        Me.lstLagu.Location = New System.Drawing.Point(134, 24)
-        Me.lstLagu.Margin = New System.Windows.Forms.Padding(2)
+        Me.lstLagu.Location = New System.Drawing.Point(201, 28)
         Me.lstLagu.MultiSelect = False
         Me.lstLagu.Name = "lstLagu"
-        Me.lstLagu.Size = New System.Drawing.Size(677, 260)
+        Me.lstLagu.Size = New System.Drawing.Size(1015, 409)
         Me.lstLagu.TabIndex = 7
         Me.lstLagu.UseCompatibleStateImageBehavior = False
         Me.lstLagu.View = System.Windows.Forms.View.Details
@@ -373,13 +383,14 @@ Partial Class formLagu
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 1, 0, 1)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(6, 2, 0, 2)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(811, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1216, 28)
         Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -388,7 +399,7 @@ Partial Class formLagu
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveToolStripMenuItem, Me.OpenToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 22)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(52, 24)
         Me.FileToolStripMenuItem.Text = "&File"
         '
         'SaveToolStripMenuItem
@@ -396,7 +407,7 @@ Partial Class formLagu
         Me.SaveToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.SaveToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(148, 34)
         Me.SaveToolStripMenuItem.Text = "&Save"
         '
         'OpenToolStripMenuItem
@@ -404,7 +415,7 @@ Partial Class formLagu
         Me.OpenToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.OpenToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(148, 34)
         Me.OpenToolStripMenuItem.Text = "&Open"
         '
         'ExitToolStripMenuItem
@@ -412,7 +423,7 @@ Partial Class formLagu
         Me.ExitToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(33, Byte), Integer))
         Me.ExitToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(100, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(148, 34)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'Timer1
@@ -429,15 +440,14 @@ Partial Class formLagu
         '
         'formLagu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(81, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.ClientSize = New System.Drawing.Size(811, 419)
+        Me.ClientSize = New System.Drawing.Size(1216, 645)
         Me.Controls.Add(Me.Panel2)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MinimumSize = New System.Drawing.Size(827, 458)
+        Me.MinimumSize = New System.Drawing.Size(1230, 674)
         Me.Name = "formLagu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MP3 Player"

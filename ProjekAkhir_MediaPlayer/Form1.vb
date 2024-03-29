@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports TagLib
 Imports TagLib.Riff
 
@@ -150,20 +151,7 @@ Class formLagu
                 While Not reader.EndOfStream
                     line = reader.ReadLine()
                     Console.WriteLine(line)
-                    Dim file As TagLib.File = Nothing
-
-                    file = TagLib.File.Create(line)
-                    Dim item As New ListViewItem()
-                    item.Text = If(file.Tag.Title, Path.GetFileNameWithoutExtension(line))
-                    item.SubItems.Add(String.Join(", ", file.Tag.Performers))
-                    item.SubItems.Add(file.Tag.Album)
-                    item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
-                    item.Tag = line ' Simpan jalur file untuk pemutaran
-                    lstLagu.Items.Add(item)
-
-                    If file IsNot Nothing Then
-                        file.Dispose()
-                    End If
+                    AddFileToListView(line)
                 End While
             End Using
         End If
@@ -199,15 +187,12 @@ Class formLagu
             item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
             item.Tag = filePath ' Save file path for playback
             lstLagu.Items.Add(item)
-
-        Catch ex As Exception
-            MessageBox.Show($"Error reading metadata for file {Path.GetFileName(filePath)}")
-
-        Finally
+        Catch
             If file IsNot Nothing Then
                 file.Dispose()
             End If
         End Try
+        lstLagu.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
@@ -278,26 +263,7 @@ Class formLagu
                     While Not reader.EndOfStream
                         line = reader.ReadLine()
                         Console.WriteLine(line)
-                        Dim file As TagLib.File = Nothing
-                        Try
-                            file = TagLib.File.Create(line)
-                            Dim item As New ListViewItem()
-                            item.Text = If(file.Tag.Title, Path.GetFileNameWithoutExtension(line))
-                            item.SubItems.Add(String.Join(", ", file.Tag.Performers))
-                            item.SubItems.Add(file.Tag.Album)
-                            item.SubItems.Add(file.Properties.Duration.ToString("mm\:ss"))
-                            item.Tag = line ' Simpan jalur file untuk pemutaran
-                            lstLagu.Items.Add(item)
-
-                        Catch ex As Exception
-                            ' Menangani kesalahan pembacaan metadata
-                            MessageBox.Show($"Error reading metadata for file {Path.GetFileName(line)}")
-
-                        Finally
-                            If file IsNot Nothing Then
-                                file.Dispose()
-                            End If
-                        End Try
+                        AddFileToListView(line)
                     End While
                 End Using
 
@@ -337,6 +303,66 @@ Class formLagu
             Next
         End If
     End Sub
+
+    Private Sub lstLagu_ColumnClick(sender As Object, e As ColumnClickEventArgs) Handles lstLagu.ColumnClick
+        For Each column As ColumnHeader In lstLagu.Columns
+            column.Text = column.Text.Split(" ")(0)
+        Next
+
+        If lstLagu.Sorting = SortOrder.Ascending Then
+            lstLagu.Sorting = SortOrder.Descending
+            If lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text & " ▲" Then
+                lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text.Replace(" ▲", "") & " ▼"
+            Else
+                lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text.Replace(" ▲", "").Replace(" ▼", "")
+            End If
+            lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text & " ▼"
+        Else
+            lstLagu.Sorting = SortOrder.Ascending
+            If lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text & " ▼" Then
+                lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text.Replace(" ▼", "") & " ▲"
+            Else
+                lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text.Replace(" ▲", "").Replace(" ▼", "")
+            End If
+            lstLagu.Columns(e.Column).Text = lstLagu.Columns(e.Column).Text & " ▲"
+        End If
+
+        lstLagu.ListViewItemSorter = New ListViewItemComparer(e.Column, lstLagu.Sorting)
+        lstLagu.Sort()
+
+        lstLagu.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
+    End Sub
+
+    Private Class ListViewItemComparer
+        Implements IComparer
+
+        Private col As Integer
+        Private order As SortOrder
+
+        Public Sub New(column As Integer, order As SortOrder)
+            col = column
+            Me.order = order
+        End Sub
+
+        Public Function Compare(x As Object, y As Object) As Integer Implements IComparer.Compare
+            Dim returnVal As Integer = -1
+
+            If IsNumeric(CType(x, ListViewItem).SubItems(col).Text) AndAlso IsNumeric(CType(y, ListViewItem).SubItems(col).Text) Then
+                'Numeric
+                returnVal = Val(CType(x, ListViewItem).SubItems(col).Text).CompareTo(Val(CType(y, ListViewItem).SubItems(col).Text))
+            Else
+                'String
+                returnVal = [String].Compare(CType(x, ListViewItem).SubItems(col).Text, CType(y, ListViewItem).SubItems(col).Text)
+            End If
+
+            'Descending.
+            If order = SortOrder.Descending Then
+                returnVal *= -1
+            End If
+
+            Return returnVal
+        End Function
+    End Class
 
     Private Sub btnFloating_Click(sender As Object, e As EventArgs) Handles btnFloating.Click
         floatingWindow.Show()
