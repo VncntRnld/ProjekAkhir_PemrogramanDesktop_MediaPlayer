@@ -202,7 +202,11 @@
     <None Include="Resources\shuffle.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\no-volume.png" />
+    <None Include="Resources\low-volume.png" />
+    <None Include="Resources\medium-volume.png" />
     <Content Include="Resources\mini-display.png" />
+    <None Include="Resources\stopwatch.png" />
     <None Include="Resources\mini-display1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

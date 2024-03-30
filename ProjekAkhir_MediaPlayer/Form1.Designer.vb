@@ -29,11 +29,11 @@ Partial Class formLagu
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
-        Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.lblCurrentSong = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.btnShuffle = New System.Windows.Forms.PictureBox()
+        Me.btnFloating = New System.Windows.Forms.PictureBox()
         Me.lblDurasi = New System.Windows.Forms.Label()
         Me.btnPrev = New System.Windows.Forms.PictureBox()
         Me.lblDurasiSekarang = New System.Windows.Forms.Label()
@@ -41,9 +41,11 @@ Partial Class formLagu
         Me.btnNext = New System.Windows.Forms.PictureBox()
         Me.barLagu = New System.Windows.Forms.TrackBar()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnFloating = New System.Windows.Forms.PictureBox()
+        Me.picVolume = New System.Windows.Forms.PictureBox()
+        Me.BarVolume = New System.Windows.Forms.TrackBar()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblCurrentSinger = New System.Windows.Forms.Label()
+        Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lstLagu = New System.Windows.Forms.ListView()
@@ -62,17 +64,19 @@ Partial Class formLagu
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.btnShuffle, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPrev, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnNext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.barLagu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
-        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picVolume, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BarVolume, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -137,16 +141,6 @@ Partial Class formLagu
         Me.btnTambah.Text = "Add Song"
         Me.btnTambah.UseVisualStyleBackColor = False
         '
-        'AxWindowsMediaPlayer1
-        '
-        Me.AxWindowsMediaPlayer1.Enabled = True
-        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(24, 27)
-        Me.AxWindowsMediaPlayer1.Margin = New System.Windows.Forms.Padding(2)
-        Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
-        Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(80, 80)
-        Me.AxWindowsMediaPlayer1.TabIndex = 1
-        '
         'lblCurrentSong
         '
         Me.lblCurrentSong.AutoSize = True
@@ -174,6 +168,7 @@ Partial Class formLagu
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.btnShuffle)
+        Me.Panel6.Controls.Add(Me.btnFloating)
         Me.Panel6.Controls.Add(Me.lblDurasi)
         Me.Panel6.Controls.Add(Me.btnPrev)
         Me.Panel6.Controls.Add(Me.lblDurasiSekarang)
@@ -195,6 +190,16 @@ Partial Class formLagu
         Me.btnShuffle.Size = New System.Drawing.Size(24, 24)
         Me.btnShuffle.TabIndex = 8
         Me.btnShuffle.TabStop = False
+        '
+        'btnFloating
+        '
+        Me.btnFloating.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnFloating.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.mini_display
+        Me.btnFloating.Location = New System.Drawing.Point(327, 54)
+        Me.btnFloating.Name = "btnFloating"
+        Me.btnFloating.Size = New System.Drawing.Size(24, 24)
+        Me.btnFloating.TabIndex = 9
+        Me.btnFloating.TabStop = False
         '
         'lblDurasi
         '
@@ -265,22 +270,34 @@ Partial Class formLagu
         '
         'Panel5
         '
-        Me.Panel5.Controls.Add(Me.btnFloating)
+        Me.Panel5.Controls.Add(Me.picVolume)
+        Me.Panel5.Controls.Add(Me.BarVolume)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel5.Location = New System.Drawing.Point(591, 0)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(220, 135)
         Me.Panel5.TabIndex = 11
         '
-        'btnFloating
+        'picVolume
         '
-        Me.btnFloating.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnFloating.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.mini_display
-        Me.btnFloating.Location = New System.Drawing.Point(171, 55)
-        Me.btnFloating.Name = "btnFloating"
-        Me.btnFloating.Size = New System.Drawing.Size(24, 24)
-        Me.btnFloating.TabIndex = 9
-        Me.btnFloating.TabStop = False
+        Me.picVolume.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picVolume.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.low_volume
+        Me.picVolume.Location = New System.Drawing.Point(21, 54)
+        Me.picVolume.Name = "picVolume"
+        Me.picVolume.Size = New System.Drawing.Size(24, 24)
+        Me.picVolume.TabIndex = 10
+        Me.picVolume.TabStop = False
+        '
+        'BarVolume
+        '
+        Me.BarVolume.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BarVolume.Location = New System.Drawing.Point(44, 54)
+        Me.BarVolume.Maximum = 100
+        Me.BarVolume.Name = "BarVolume"
+        Me.BarVolume.Size = New System.Drawing.Size(104, 45)
+        Me.BarVolume.TabIndex = 1
+        Me.BarVolume.TickFrequency = 10
+        Me.BarVolume.Value = 50
         '
         'Panel3
         '
@@ -304,6 +321,16 @@ Partial Class formLagu
         Me.lblCurrentSinger.Name = "lblCurrentSinger"
         Me.lblCurrentSinger.Size = New System.Drawing.Size(0, 16)
         Me.lblCurrentSinger.TabIndex = 10
+        '
+        'AxWindowsMediaPlayer1
+        '
+        Me.AxWindowsMediaPlayer1.Enabled = True
+        Me.AxWindowsMediaPlayer1.Location = New System.Drawing.Point(22, 27)
+        Me.AxWindowsMediaPlayer1.Margin = New System.Windows.Forms.Padding(2)
+        Me.AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
+        Me.AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(80, 80)
+        Me.AxWindowsMediaPlayer1.TabIndex = 1
         '
         'Label1
         '
@@ -443,19 +470,22 @@ Partial Class formLagu
         Me.Text = "MP3 Player"
         Me.Panel4.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.btnShuffle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPrev, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnNext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.barLagu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
-        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.PerformLayout()
+        CType(Me.picVolume, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BarVolume, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -499,4 +529,6 @@ Partial Class formLagu
     Friend WithEvents lblCurrentSinger As Label
     Friend WithEvents btnFloating As PictureBox
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents BarVolume As TrackBar
+    Friend WithEvents picVolume As PictureBox
 End Class
