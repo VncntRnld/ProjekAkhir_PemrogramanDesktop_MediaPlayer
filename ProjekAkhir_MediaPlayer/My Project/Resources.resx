@@ -124,6 +124,12 @@
   <data name="back24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mini-display" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mini-display1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stopwatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stopwatch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wave-sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wave-sound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,7 +142,13 @@
   <data name="next24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mini-display" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mini-display1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="low-volume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\low-volume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medium-volume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medium-volume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="no-volume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no-volume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

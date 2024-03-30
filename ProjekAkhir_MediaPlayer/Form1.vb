@@ -369,4 +369,16 @@ Class formLagu
         End If
     End Sub
 
+    Private Sub BarVolume_Scroll(sender As Object, e As EventArgs) Handles BarVolume.Scroll
+        AxWindowsMediaPlayer1.settings.volume = BarVolume.Value
+        If BarVolume.Value > 50 Then
+            picVolume.Image = My.Resources.medium_volume
+        ElseIf BarVolume.Value > 0 Then
+            picVolume.Image = My.Resources.low_volume
+        Else
+            picVolume.Image = My.Resources.no_volume
+        End If
+    End Sub
+
+
 End Class
