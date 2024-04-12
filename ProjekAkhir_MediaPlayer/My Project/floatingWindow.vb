@@ -7,20 +7,19 @@ Public Class floatingWindow
             Me.lblCurrentSinger.Text = formLagu.artist
         End If
 
-        If formLagu.btnPlay.Text = "pause" Then
+        If formLagu.AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPlaying Then
             btnPlay.Image = My.Resources.pause32px
-            btnPlay.Text = "pause"
         End If
     End Sub
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
-        If Me.btnPlay.Text = "play" Then
+        If formLagu.AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPaused Then
             If formLagu.shuffle Then
                 formLagu.ShuffleSong()
             End If
             formLagu.playSong()
         Else
-            formLagu.stopSong()
+            formLagu.pauseSong()
         End If
     End Sub
 

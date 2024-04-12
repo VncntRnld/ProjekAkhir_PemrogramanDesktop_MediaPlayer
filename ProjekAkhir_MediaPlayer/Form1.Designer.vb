@@ -168,7 +168,6 @@ Partial Class formLagu
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.btnShuffle)
-        Me.Panel6.Controls.Add(Me.btnFloating)
         Me.Panel6.Controls.Add(Me.lblDurasi)
         Me.Panel6.Controls.Add(Me.btnPrev)
         Me.Panel6.Controls.Add(Me.lblDurasiSekarang)
@@ -195,7 +194,7 @@ Partial Class formLagu
         '
         Me.btnFloating.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btnFloating.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.mini_display
-        Me.btnFloating.Location = New System.Drawing.Point(327, 54)
+        Me.btnFloating.Location = New System.Drawing.Point(177, 54)
         Me.btnFloating.Name = "btnFloating"
         Me.btnFloating.Size = New System.Drawing.Size(24, 24)
         Me.btnFloating.TabIndex = 9
@@ -271,6 +270,7 @@ Partial Class formLagu
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.picVolume)
+        Me.Panel5.Controls.Add(Me.btnFloating)
         Me.Panel5.Controls.Add(Me.BarVolume)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel5.Location = New System.Drawing.Point(591, 0)
@@ -282,7 +282,7 @@ Partial Class formLagu
         '
         Me.picVolume.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picVolume.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.low_volume
-        Me.picVolume.Location = New System.Drawing.Point(21, 54)
+        Me.picVolume.Location = New System.Drawing.Point(38, 54)
         Me.picVolume.Name = "picVolume"
         Me.picVolume.Size = New System.Drawing.Size(24, 24)
         Me.picVolume.TabIndex = 10
@@ -291,7 +291,7 @@ Partial Class formLagu
         'BarVolume
         '
         Me.BarVolume.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BarVolume.Location = New System.Drawing.Point(44, 54)
+        Me.BarVolume.Location = New System.Drawing.Point(61, 54)
         Me.BarVolume.Maximum = 100
         Me.BarVolume.Name = "BarVolume"
         Me.BarVolume.Size = New System.Drawing.Size(104, 45)
@@ -376,25 +376,25 @@ Partial Class formLagu
         'chTitle
         '
         Me.chTitle.Text = "Title"
-        Me.chTitle.Width = 189
+        Me.chTitle.Width = 229
         '
         'chArtists
         '
         Me.chArtists.DisplayIndex = 2
         Me.chArtists.Text = "Artists"
-        Me.chArtists.Width = 170
+        Me.chArtists.Width = 165
         '
         'chAlbum
         '
         Me.chAlbum.DisplayIndex = 3
         Me.chAlbum.Text = "Album"
-        Me.chAlbum.Width = 179
+        Me.chAlbum.Width = 254
         '
         'chDuration
         '
         Me.chDuration.DisplayIndex = 1
         Me.chDuration.Text = "Duration"
-        Me.chDuration.Width = 61
+        Me.chDuration.Width = 90
         '
         'MenuStrip1
         '

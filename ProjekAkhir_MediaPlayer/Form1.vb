@@ -44,7 +44,8 @@ Class formLagu
     End Sub
 
     Private Sub playNewSong()
-        If btnPlay.Text = "play" And lstLagu.SelectedItems.Count > 0 Then
+        If lstLagu.SelectedItems.Count > 0 Then
+            pauseSong()
             AxWindowsMediaPlayer1.URL = lstLagu.SelectedItems(0).Tag.ToString()
 
             'Text Now Playing
@@ -53,41 +54,37 @@ Class formLagu
             Timer1.Enabled = True
             Timer2.Enabled = True
             btnPlay.Image = My.Resources.pause32px
-            btnPlay.Text = "pause"
+
             If floatingWindow.Visible Then
                 floatingWindow.btnPlay.Image = My.Resources.pause32px
-                floatingWindow.btnPlay.Text = "pause"
             End If
         End If
     End Sub
 
     Public Sub playSong()
-        If btnPlay.Text = "play" And lstLagu.SelectedItems.Count > 0 Then
+        If (AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPaused Or AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsReady) And lstLagu.SelectedItems.Count > 0 Then
             AxWindowsMediaPlayer1.Ctlcontrols.play()
 
             Timer1.Enabled = True
             Timer2.Enabled = True
             btnPlay.Image = My.Resources.pause32px
-            btnPlay.Text = "pause"
+
             If floatingWindow.Visible Then
                 floatingWindow.btnPlay.Image = My.Resources.pause32px
-                floatingWindow.btnPlay.Text = "pause"
             End If
 
         End If
     End Sub
 
-    Public Sub stopSong()
-        If btnPlay.Text = "pause" Then
+    Public Sub pauseSong()
+        If AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPlaying Then
             AxWindowsMediaPlayer1.Ctlcontrols.pause()
 
             Timer1.Enabled = False
             Timer2.Enabled = False
             btnPlay.Image = My.Resources.play32px
-            btnPlay.Text = "play"
             If floatingWindow.Visible Then
                 floatingWindow.btnPlay.Image = My.Resources.play32px
-                floatingWindow.btnPlay.Text = "play"
             End If
         End If
     End Sub
@@ -96,12 +93,15 @@ Class formLagu
         If lstLagu.SelectedItems.Count > 0 Then
             Dim selectedIndex As Integer = lstLagu.SelectedIndices(0)
 
-            stopSong()
             lstLagu.SelectedIndices.Clear()
             If selectedIndex < lstLagu.Items.Count - 1 Then
 
                 If shuffle Then 'Jika shuffle nyala..
                     Dim random As New Random()
+                    Dim newRandom As Integer = random.Next(0, lstLagu.Items.Count)
+                    While selectedIndex = newRandom 'Random will always choose a new song
+                        newRandom = random.Next(0, lstLagu.Items.Count)
+                    End While
                     lstLagu.SelectedIndices.Add(random.Next(0, lstLagu.Items.Count))
                 Else
                     lstLagu.SelectedIndices.Add(selectedIndex + 1)
@@ -120,7 +120,7 @@ Class formLagu
         If lstLagu.SelectedItems.Count > 0 Then
             Dim selectedIndex As Integer = lstLagu.SelectedIndices(0)
             If selectedIndex > 0 Then
-                stopSong()
+                pauseSong()
                 lstLagu.SelectedIndices.Clear()
                 lstLagu.SelectedIndices.Add(selectedIndex - 1)
                 playNewSong()
@@ -139,7 +139,6 @@ Class formLagu
 
     'GUI Handlers
     Private Sub formLagu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        btnPlay.Text = "play"
         AxWindowsMediaPlayer1.uiMode = "none"
 
         Panel2.Dock = DockStyle.Fill
@@ -178,13 +177,13 @@ Class formLagu
     End Sub
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
-        If btnPlay.Text = "play" Then
+        If AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPaused Then
             If shuffle Then
                 ShuffleSong()
             End If
             playSong()
         Else
-            stopSong()
+            pauseSong()
         End If
     End Sub
 
@@ -234,7 +233,7 @@ Class formLagu
     End Sub
 
     Private Sub lstLagu_DoubleClick(sender As Object, e As EventArgs) Handles lstLagu.DoubleClick
-        stopSong()
+        pauseSong()
         playNewSong()
     End Sub
 
@@ -339,7 +338,11 @@ Class formLagu
     End Sub
 
     Private Sub btnFloating_Click(sender As Object, e As EventArgs) Handles btnFloating.Click
-        floatingWindow.Show()
+        If floatingWindow.Visible Then
+            floatingWindow.Dispose()
+        Else
+            floatingWindow.Show()
+        End If
     End Sub
 
     'Buat timer text slider
@@ -362,11 +365,24 @@ Class formLagu
         If Me.currentDuration < Me.duration Then
             barLagu.Value = currentDuration
             lblDurasiSekarang.Text = AxWindowsMediaPlayer1.Ctlcontrols.currentPositionString
-            currentDuration += 1
-        Else
-            stopSong()
-            nextSong()
+            currentDuration = AxWindowsMediaPlayer1.Ctlcontrols.currentPosition
         End If
+    End Sub
+
+    'If songs end then .. 
+    Private Sub AxWindowsMediaPlayer1_PlayStateChange(sender As Object, e As AxWMPLib._WMPOCXEvents_PlayStateChangeEvent) Handles AxWindowsMediaPlayer1.PlayStateChange
+        Select Case AxWindowsMediaPlayer1.playState
+            Case WMPLib.WMPPlayState.wmppsMediaEnded
+                nextSong()
+            Case WMPLib.WMPPlayState.wmppsReady
+                If AxWindowsMediaPlayer1.Ctlcontrols.currentItem IsNot Nothing Then
+                    playSong()
+                End If
+        End Select
+    End Sub
+
+    Private Sub barLagu_Scroll(sender As Object, e As EventArgs) Handles barLagu.Scroll
+        AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = barLagu.Value
     End Sub
 
     Private Sub BarVolume_Scroll(sender As Object, e As EventArgs) Handles BarVolume.Scroll
