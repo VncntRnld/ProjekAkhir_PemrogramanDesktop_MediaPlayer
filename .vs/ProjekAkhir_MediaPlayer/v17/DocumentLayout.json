@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Semester 6\\Pemrograman Dekstop\\projectAkhir\\projectAkhir_MediaPlayer\\ProjekAkhir_PemrogramanDesktop_MediaPlayer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|d:\\semester 6\\pemrograman dekstop\\projectakhir\\projectakhir_mediaplayer\\projekakhir_pemrogramandesktop_mediaplayer\\projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|solutionrelative:projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|d:\\semester 6\\pemrograman dekstop\\projectakhir\\projectakhir_mediaplayer\\projekakhir_pemrogramandesktop_mediaplayer\\projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|solutionrelative:projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|D:\\Semester 6\\Pemrograman Dekstop\\projectAkhir\\projectAkhir_MediaPlayer\\ProjekAkhir_PemrogramanDesktop_MediaPlayer\\projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|solutionrelative:projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|D:\\Semester 6\\Pemrograman Dekstop\\projectAkhir\\projectAkhir_MediaPlayer\\ProjekAkhir_PemrogramanDesktop_MediaPlayer\\projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{CE3C0788-DC89-4D2A-9571-F756D2DBE80A}|ProjekAkhir_MediaPlayer\\ProjekAkhir_MediaPlayer.vbproj|solutionrelative:projekakhir_mediaplayer\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,27 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.vb",
               "DocumentMoniker": "D:\\Semester 6\\Pemrograman Dekstop\\projectAkhir\\projectAkhir_MediaPlayer\\ProjekAkhir_PemrogramanDesktop_MediaPlayer\\ProjekAkhir_MediaPlayer\\Form1.vb",
               "RelativeDocumentMoniker": "ProjekAkhir_MediaPlayer\\Form1.vb",
               "ToolTip": "D:\\Semester 6\\Pemrograman Dekstop\\projectAkhir\\projectAkhir_MediaPlayer\\ProjekAkhir_PemrogramanDesktop_MediaPlayer\\ProjekAkhir_MediaPlayer\\Form1.vb",
               "RelativeToolTip": "ProjekAkhir_MediaPlayer\\Form1.vb",
-              "ViewState": "AQIAAC4BAAAAAAAAAAAIwDgBAAAAAAAA",
+              "ViewState": "AQIAAMIBAAAAAAAAAAAgwM4BAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-03-27T05:35:05.767Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.vb [Design]",
               "DocumentMoniker": "D:\\Semester 6\\Pemrograman Dekstop\\projectAkhir\\projectAkhir_MediaPlayer\\ProjekAkhir_PemrogramanDesktop_MediaPlayer\\ProjekAkhir_MediaPlayer\\Form1.vb",
               "RelativeDocumentMoniker": "ProjekAkhir_MediaPlayer\\Form1.vb",
               "ToolTip": "D:\\Semester 6\\Pemrograman Dekstop\\projectAkhir\\projectAkhir_MediaPlayer\\ProjekAkhir_PemrogramanDesktop_MediaPlayer\\ProjekAkhir_MediaPlayer\\Form1.vb [Design]",
               "RelativeToolTip": "ProjekAkhir_MediaPlayer\\Form1.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-27T05:35:06.463Z"
+              "WhenOpened": "2024-03-27T05:35:06.463Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
