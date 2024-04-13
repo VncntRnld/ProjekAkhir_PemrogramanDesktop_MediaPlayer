@@ -22,6 +22,11 @@ ProjekAkhir_MediaPlayer
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:ProjekAkhir_MediaPlayer.My.Resources.Resources._loop">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ProjekAkhir_MediaPlayer.My.Resources.Resources.back24px">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -48,6 +53,21 @@ ProjekAkhir_MediaPlayer
 </summary>
 </member>
 <member name="P:ProjekAkhir_MediaPlayer.My.Resources.Resources.no_volume">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjekAkhir_MediaPlayer.My.Resources.Resources.offloop">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjekAkhir_MediaPlayer.My.Resources.Resources.offshuffle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ProjekAkhir_MediaPlayer.My.Resources.Resources.offshuffle1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

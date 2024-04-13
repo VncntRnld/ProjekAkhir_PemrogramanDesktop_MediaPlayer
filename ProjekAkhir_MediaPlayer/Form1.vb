@@ -13,6 +13,7 @@ Class formLagu
     Dim duration As Integer, currentDuration As Integer
 
     Public Shared shuffle As Boolean = False
+    Public Shared loops As Boolean = False
     Public Shared currentindex As Integer = 0
 
 
@@ -96,7 +97,9 @@ Class formLagu
             lstLagu.SelectedIndices.Clear()
             If selectedIndex < lstLagu.Items.Count - 1 Then
 
-                If shuffle Then 'Jika shuffle nyala..
+                If loops Then 'Jika shuffle nyala..
+                    lstLagu.SelectedIndices.Add(selectedIndex)
+                ElseIf shuffle Then
                     Dim random As New Random()
                     Dim newRandom As Integer = random.Next(0, lstLagu.Items.Count)
                     While selectedIndex = newRandom 'Random will always choose a new song
@@ -131,10 +134,22 @@ Class formLagu
     Public Sub ShuffleSong() '!!!
         If shuffle = True And lstLagu.Items.Count > 0 Then
             shuffle = False
+            btnShuffle.Image = My.Resources.offshuffle
         Else
             shuffle = True
+            btnShuffle.Image = My.Resources.shuffle
         End If
 
+    End Sub
+
+    Public Sub LoopSong()
+        If loops = True And lstLagu.Items.Count > 0 Then
+            loops = False
+            btnLoop.Image = My.Resources.offloop
+        Else
+            loops = True
+            btnLoop.Image = My.Resources._loop
+        End If
     End Sub
 
     'GUI Handlers
@@ -239,6 +254,10 @@ Class formLagu
 
     Private Sub btnShuffle_Click(sender As Object, e As EventArgs) Handles btnShuffle.Click
         ShuffleSong()
+    End Sub
+
+    Private Sub btnLoop_Click(sender As Object, e As EventArgs) Handles btnLoop.Click
+        LoopSong()
     End Sub
 
     Private Sub FileToolStripMenuItem_DropDownOpened(sender As Object, e As EventArgs) Handles FileToolStripMenuItem.DropDownOpened

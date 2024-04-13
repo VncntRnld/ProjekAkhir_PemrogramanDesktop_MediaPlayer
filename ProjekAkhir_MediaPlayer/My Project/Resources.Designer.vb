@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _loop() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("loop", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property back24px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("back24px", resourceCulture)
@@ -116,6 +126,36 @@ Namespace My.Resources
         Friend ReadOnly Property no_volume() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("no-volume", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property offloop() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("offloop", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property offshuffle() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("offshuffle", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property offshuffle1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("offshuffle1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
