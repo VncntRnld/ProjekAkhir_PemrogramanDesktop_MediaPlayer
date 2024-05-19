@@ -127,6 +127,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="My Project\timerWindow.Designer.vb">
+      <DependentUpon>timerWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\timerWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -143,6 +149,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\timerWindow.resx">
+      <DependentUpon>timerWindow.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +211,7 @@
     <None Include="Resources\shuffle.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\minimize-sign.png" />
     <None Include="Resources\offshuffle1.png" />
     <None Include="Resources\offshuffle.png" />
     <None Include="Resources\offloop.png" />
@@ -209,6 +219,8 @@
     <None Include="Resources\low-volume.png" />
     <None Include="Resources\medium-volume.png" />
     <None Include="Resources\loop.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\close1.png" />
     <Content Include="Resources\mini-display.png" />
     <None Include="Resources\stopwatch.png" />
     <None Include="Resources\mini-display1.png" />

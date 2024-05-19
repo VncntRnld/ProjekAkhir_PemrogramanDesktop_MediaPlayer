@@ -52,3 +52,4 @@ D:\Semester 6\Pemrograman Dekstop\projectAkhir\projectAkhir_MediaPlayer\ProjekAk
 D:\Semester 6\Pemrograman Dekstop\projectAkhir\projectAkhir_MediaPlayer\ProjekAkhir_PemrogramanDesktop_MediaPlayer\ProjekAkhir_MediaPlayer\obj\Debug\ProjekAkhir_MediaPlayer.pdb
 D:\Kuliah\Semester 6\ProgDesktop\ProjekAkhir\ProjekAkhir_MediaPlayer\ProjekAkhir_MediaPlayer\obj\Debug\ProjekAkhir_MediaPlayer.floatingWindow.resources
 D:\Semester 6\Pemrograman Dekstop\projectAkhir\projectAkhir_MediaPlayer\ProjekAkhir_PemrogramanDesktop_MediaPlayer\ProjekAkhir_MediaPlayer\obj\Debug\ProjekAkhir_MediaPlayer.floatingWindow.resources
+D:\Kuliah\Semester 6\ProgDesktop\ProjekAkhir\ProjekAkhir_MediaPlayer\ProjekAkhir_MediaPlayer\obj\Debug\ProjekAkhir_MediaPlayer.timerWindow.resources

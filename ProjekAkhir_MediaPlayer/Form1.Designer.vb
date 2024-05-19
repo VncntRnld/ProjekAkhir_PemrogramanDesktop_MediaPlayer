@@ -26,24 +26,15 @@ Partial Class formLagu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formLagu))
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
         Me.lblCurrentSong = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.btnLoop = New System.Windows.Forms.PictureBox()
-        Me.btnShuffle = New System.Windows.Forms.PictureBox()
         Me.lblDurasi = New System.Windows.Forms.Label()
-        Me.btnPrev = New System.Windows.Forms.PictureBox()
         Me.lblDurasiSekarang = New System.Windows.Forms.Label()
-        Me.btnPlay = New System.Windows.Forms.PictureBox()
-        Me.btnNext = New System.Windows.Forms.PictureBox()
         Me.barLagu = New System.Windows.Forms.TrackBar()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnTimer = New System.Windows.Forms.PictureBox()
-        Me.picVolume = New System.Windows.Forms.PictureBox()
-        Me.btnFloating = New System.Windows.Forms.PictureBox()
         Me.BarVolume = New System.Windows.Forms.TrackBar()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblCurrentSinger = New System.Windows.Forms.Label()
@@ -64,25 +55,34 @@ Partial Class formLagu
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnLoop = New System.Windows.Forms.PictureBox()
+        Me.btnShuffle = New System.Windows.Forms.PictureBox()
+        Me.btnPrev = New System.Windows.Forms.PictureBox()
+        Me.btnPlay = New System.Windows.Forms.PictureBox()
+        Me.btnNext = New System.Windows.Forms.PictureBox()
+        Me.btnTimer = New System.Windows.Forms.PictureBox()
+        Me.picVolume = New System.Windows.Forms.PictureBox()
+        Me.btnFloating = New System.Windows.Forms.PictureBox()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        CType(Me.btnLoop, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnShuffle, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPrev, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnNext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.barLagu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
-        CType(Me.btnTimer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picVolume, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarVolume, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnLoop, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnShuffle, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPrev, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnNext, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnTimer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picVolume, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OpenFileDialog1
@@ -103,15 +103,6 @@ Partial Class formLagu
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(134, 260)
         Me.Panel4.TabIndex = 5
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.wave_sound
-        Me.PictureBox1.Location = New System.Drawing.Point(34, 37)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
         '
         'btnHapus
         '
@@ -185,26 +176,6 @@ Partial Class formLagu
         Me.Panel6.Size = New System.Drawing.Size(371, 135)
         Me.Panel6.TabIndex = 12
         '
-        'btnLoop
-        '
-        Me.btnLoop.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnLoop.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.offloop
-        Me.btnLoop.Location = New System.Drawing.Point(77, 54)
-        Me.btnLoop.Name = "btnLoop"
-        Me.btnLoop.Size = New System.Drawing.Size(24, 24)
-        Me.btnLoop.TabIndex = 9
-        Me.btnLoop.TabStop = False
-        '
-        'btnShuffle
-        '
-        Me.btnShuffle.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnShuffle.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.offshuffle1
-        Me.btnShuffle.Location = New System.Drawing.Point(277, 54)
-        Me.btnShuffle.Name = "btnShuffle"
-        Me.btnShuffle.Size = New System.Drawing.Size(24, 24)
-        Me.btnShuffle.TabIndex = 8
-        Me.btnShuffle.TabStop = False
-        '
         'lblDurasi
         '
         Me.lblDurasi.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -218,16 +189,6 @@ Partial Class formLagu
         Me.lblDurasi.TabIndex = 3
         Me.lblDurasi.Text = "00:00"
         '
-        'btnPrev
-        '
-        Me.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnPrev.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.back24px
-        Me.btnPrev.Location = New System.Drawing.Point(123, 54)
-        Me.btnPrev.Name = "btnPrev"
-        Me.btnPrev.Size = New System.Drawing.Size(24, 24)
-        Me.btnPrev.TabIndex = 7
-        Me.btnPrev.TabStop = False
-        '
         'lblDurasiSekarang
         '
         Me.lblDurasiSekarang.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -240,26 +201,6 @@ Partial Class formLagu
         Me.lblDurasiSekarang.Size = New System.Drawing.Size(38, 15)
         Me.lblDurasiSekarang.TabIndex = 3
         Me.lblDurasiSekarang.Text = "00:00"
-        '
-        'btnPlay
-        '
-        Me.btnPlay.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnPlay.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.play32px
-        Me.btnPlay.Location = New System.Drawing.Point(174, 50)
-        Me.btnPlay.Name = "btnPlay"
-        Me.btnPlay.Size = New System.Drawing.Size(32, 32)
-        Me.btnPlay.TabIndex = 4
-        Me.btnPlay.TabStop = False
-        '
-        'btnNext
-        '
-        Me.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnNext.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.next24px
-        Me.btnNext.Location = New System.Drawing.Point(229, 54)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(24, 24)
-        Me.btnNext.TabIndex = 6
-        Me.btnNext.TabStop = False
         '
         'barLagu
         '
@@ -283,36 +224,6 @@ Partial Class formLagu
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(220, 135)
         Me.Panel5.TabIndex = 11
-        '
-        'btnTimer
-        '
-        Me.btnTimer.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnTimer.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.stopwatch
-        Me.btnTimer.Location = New System.Drawing.Point(145, 54)
-        Me.btnTimer.Name = "btnTimer"
-        Me.btnTimer.Size = New System.Drawing.Size(24, 24)
-        Me.btnTimer.TabIndex = 11
-        Me.btnTimer.TabStop = False
-        '
-        'picVolume
-        '
-        Me.picVolume.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picVolume.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.low_volume
-        Me.picVolume.Location = New System.Drawing.Point(15, 54)
-        Me.picVolume.Name = "picVolume"
-        Me.picVolume.Size = New System.Drawing.Size(24, 24)
-        Me.picVolume.TabIndex = 10
-        Me.picVolume.TabStop = False
-        '
-        'btnFloating
-        '
-        Me.btnFloating.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnFloating.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.mini_display
-        Me.btnFloating.Location = New System.Drawing.Point(179, 54)
-        Me.btnFloating.Name = "btnFloating"
-        Me.btnFloating.Size = New System.Drawing.Size(24, 24)
-        Me.btnFloating.TabIndex = 9
-        Me.btnFloating.TabStop = False
         '
         'BarVolume
         '
@@ -479,6 +390,95 @@ Partial Class formLagu
         '
         Me.Timer2.Interval = 500
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.wave_sound
+        Me.PictureBox1.Location = New System.Drawing.Point(34, 37)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'btnLoop
+        '
+        Me.btnLoop.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnLoop.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.offloop
+        Me.btnLoop.Location = New System.Drawing.Point(77, 54)
+        Me.btnLoop.Name = "btnLoop"
+        Me.btnLoop.Size = New System.Drawing.Size(24, 24)
+        Me.btnLoop.TabIndex = 9
+        Me.btnLoop.TabStop = False
+        '
+        'btnShuffle
+        '
+        Me.btnShuffle.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnShuffle.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.offshuffle1
+        Me.btnShuffle.Location = New System.Drawing.Point(277, 54)
+        Me.btnShuffle.Name = "btnShuffle"
+        Me.btnShuffle.Size = New System.Drawing.Size(24, 24)
+        Me.btnShuffle.TabIndex = 8
+        Me.btnShuffle.TabStop = False
+        '
+        'btnPrev
+        '
+        Me.btnPrev.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnPrev.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.back24px
+        Me.btnPrev.Location = New System.Drawing.Point(123, 54)
+        Me.btnPrev.Name = "btnPrev"
+        Me.btnPrev.Size = New System.Drawing.Size(24, 24)
+        Me.btnPrev.TabIndex = 7
+        Me.btnPrev.TabStop = False
+        '
+        'btnPlay
+        '
+        Me.btnPlay.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnPlay.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.play32px
+        Me.btnPlay.Location = New System.Drawing.Point(174, 50)
+        Me.btnPlay.Name = "btnPlay"
+        Me.btnPlay.Size = New System.Drawing.Size(32, 32)
+        Me.btnPlay.TabIndex = 4
+        Me.btnPlay.TabStop = False
+        '
+        'btnNext
+        '
+        Me.btnNext.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnNext.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.next24px
+        Me.btnNext.Location = New System.Drawing.Point(229, 54)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(24, 24)
+        Me.btnNext.TabIndex = 6
+        Me.btnNext.TabStop = False
+        '
+        'btnTimer
+        '
+        Me.btnTimer.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnTimer.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.stopwatch
+        Me.btnTimer.Location = New System.Drawing.Point(145, 54)
+        Me.btnTimer.Name = "btnTimer"
+        Me.btnTimer.Size = New System.Drawing.Size(24, 24)
+        Me.btnTimer.TabIndex = 11
+        Me.btnTimer.TabStop = False
+        '
+        'picVolume
+        '
+        Me.picVolume.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picVolume.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.low_volume
+        Me.picVolume.Location = New System.Drawing.Point(15, 54)
+        Me.picVolume.Name = "picVolume"
+        Me.picVolume.Size = New System.Drawing.Size(24, 24)
+        Me.picVolume.TabIndex = 10
+        Me.picVolume.TabStop = False
+        '
+        'btnFloating
+        '
+        Me.btnFloating.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnFloating.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.mini_display
+        Me.btnFloating.Location = New System.Drawing.Point(179, 54)
+        Me.btnFloating.Name = "btnFloating"
+        Me.btnFloating.Size = New System.Drawing.Size(24, 24)
+        Me.btnFloating.TabIndex = 9
+        Me.btnFloating.TabStop = False
+        '
         'formLagu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -494,21 +494,12 @@ Partial Class formLagu
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MP3 Player"
         Me.Panel4.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.btnLoop, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnShuffle, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPrev, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnNext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.barLagu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.btnTimer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picVolume, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarVolume, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -517,6 +508,15 @@ Partial Class formLagu
         Me.Panel2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnLoop, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnShuffle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPrev, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnNext, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnTimer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picVolume, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnFloating, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -105,7 +105,7 @@ Class formLagu
                     While selectedIndex = newRandom 'Random will always choose a new song
                         newRandom = random.Next(0, lstLagu.Items.Count)
                     End While
-                    lstLagu.SelectedIndices.Add(random.Next(0, lstLagu.Items.Count))
+                    lstLagu.SelectedIndices.Add(newRandom)
                 Else
                     lstLagu.SelectedIndices.Add(selectedIndex + 1)
                 End If
@@ -193,9 +193,6 @@ Class formLagu
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
         If AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPaused Then
-            If shuffle Then
-                ShuffleSong()
-            End If
             playSong()
         Else
             pauseSong()
@@ -361,6 +358,7 @@ Class formLagu
             floatingWindow.Dispose()
         Else
             floatingWindow.Show()
+            Me.WindowState = FormWindowState.Minimized
         End If
     End Sub
 
@@ -461,6 +459,14 @@ Class formLagu
             Return returnVal
         End Function
     End Class
+
+    Private Sub btnTimer_Click(sender As Object, e As EventArgs) Handles btnTimer.Click
+        If timerWindow.Visible() Then
+            timerWindow.Close()
+        Else
+            timerWindow.Show()
+        End If
+    End Sub
 
     Private Sub BarVolume_Scroll(sender As Object, e As EventArgs) Handles BarVolume.Scroll
         AxWindowsMediaPlayer1.settings.volume = BarVolume.Value

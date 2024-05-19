@@ -23,19 +23,25 @@ Partial Class floatingWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.btnPlay = New System.Windows.Forms.PictureBox()
         Me.btnNext = New System.Windows.Forms.PictureBox()
         Me.lblCurrentSinger = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblCurrentSong = New System.Windows.Forms.Label()
+        Me.btnMinimize = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnNext, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(26, Byte), Integer), CType(CType(33, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.btnMinimize)
+        Me.Panel3.Controls.Add(Me.btnClose)
         Me.Panel3.Controls.Add(Me.btnPlay)
         Me.Panel3.Controls.Add(Me.btnNext)
         Me.Panel3.Controls.Add(Me.lblCurrentSinger)
@@ -44,8 +50,17 @@ Partial Class floatingWindow
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(326, 107)
+        Me.Panel3.Size = New System.Drawing.Size(342, 113)
         Me.Panel3.TabIndex = 11
+        '
+        'btnClose
+        '
+        Me.btnClose.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.close
+        Me.btnClose.Location = New System.Drawing.Point(319, 7)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(16, 16)
+        Me.btnClose.TabIndex = 13
+        Me.btnClose.TabStop = False
         '
         'btnPlay
         '
@@ -98,25 +113,36 @@ Partial Class floatingWindow
         Me.lblCurrentSong.Size = New System.Drawing.Size(0, 23)
         Me.lblCurrentSong.TabIndex = 5
         '
+        'btnMinimize
+        '
+        Me.btnMinimize.Image = Global.ProjekAkhir_MediaPlayer.My.Resources.Resources.minimize_sign
+        Me.btnMinimize.Location = New System.Drawing.Point(294, 11)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(16, 16)
+        Me.btnMinimize.TabIndex = 14
+        Me.btnMinimize.TabStop = False
+        '
         'floatingWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(326, 107)
+        Me.ClientSize = New System.Drawing.Size(342, 113)
         Me.Controls.Add(Me.Panel3)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(342, 146)
+        Me.MaximumSize = New System.Drawing.Size(342, 113)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(342, 146)
+        Me.MinimumSize = New System.Drawing.Size(342, 113)
         Me.Name = "floatingWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "floatingWindow"
         Me.TopMost = True
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPlay, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnNext, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -127,4 +153,6 @@ Partial Class floatingWindow
     Friend WithEvents lblCurrentSong As Label
     Friend WithEvents btnPlay As PictureBox
     Friend WithEvents btnNext As PictureBox
+    Friend WithEvents btnClose As PictureBox
+    Friend WithEvents btnMinimize As PictureBox
 End Class
