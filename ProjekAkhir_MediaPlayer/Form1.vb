@@ -11,6 +11,7 @@ Class formLagu
     Dim album As String
     Dim year As String
     Dim duration As Integer, currentDuration As Integer
+    Dim countdownTime As TimeSpan
 
     Public Shared shuffle As Boolean = False
     Public Shared loops As Boolean = False
@@ -466,6 +467,24 @@ Class formLagu
         Else
             timerWindow.Show()
         End If
+    End Sub
+
+    Private Sub timerCountdown_Tick(sender As Object, e As EventArgs) Handles timerCountdown.Tick
+        If countdownTime.TotalSeconds > 0 Then
+            countdownTime = countdownTime.Subtract(TimeSpan.FromSeconds(1))
+            timerWindow.lblCountdown.Text = countdownTime.ToString("hh\:mm\:ss")
+            lblTimerCountDown.Text = "Timer : " + countdownTime.ToString("hh\.mm\.ss")
+        Else
+            timerCountdown.Stop()
+            Application.Exit()
+        End If
+    End Sub
+
+    Public Sub SetCountdown(hours As Integer, minutes As Integer)
+        countdownTime = New TimeSpan(hours, minutes, 0)
+        timerWindow.lblCountdown.Text = countdownTime.ToString("hh\:mm\:ss")
+        lblTimerCountDown.Text = "Timer : " + countdownTime.ToString("hh\.mm\.ss")
+        timerCountdown.Start()
     End Sub
 
     Private Sub BarVolume_Scroll(sender As Object, e As EventArgs) Handles BarVolume.Scroll
