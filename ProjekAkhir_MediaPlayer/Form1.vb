@@ -48,20 +48,32 @@ Class formLagu
     Private Sub playNewSong()
         If lstLagu.SelectedItems.Count > 0 Then
             pauseSong()
-            AxWindowsMediaPlayer1.URL = lstLagu.SelectedItems(0).Tag.ToString()
 
-            'Text Now Playing
-            CurrentInfo()
+            Try
+                AxWindowsMediaPlayer1.URL = lstLagu.SelectedItems(0).Tag.ToString()
 
-            Timer1.Enabled = True
-            Timer2.Enabled = True
-            btnPlay.Image = My.Resources.pause32px
+                'Text Now Playing
+                CurrentInfo()
 
-            If floatingWindow.Visible Then
-                floatingWindow.btnPlay.Image = My.Resources.pause32px
-            End If
+                Timer1.Enabled = True
+                Timer2.Enabled = True
+                btnPlay.Image = My.Resources.pause32px
+
+                If floatingWindow.Visible Then
+                    floatingWindow.btnPlay.Image = My.Resources.pause32px
+                End If
+
+            Catch ex As Exception
+                Dim currentIndex As Integer = lstLagu.SelectedIndices(0)
+
+                nextSong()
+
+                lstLagu.Items.RemoveAt(currentIndex)
+            End Try
+
         End If
     End Sub
+
 
     Public Sub playSong()
         If (AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsPaused Or AxWindowsMediaPlayer1.playState = WMPLib.WMPPlayState.wmppsReady) And lstLagu.SelectedItems.Count > 0 Then
